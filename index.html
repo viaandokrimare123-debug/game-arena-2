@@ -45,7 +45,34 @@ body.reduce-motion *,body.reduce-motion *:before,body.reduce-motion *:after{anim
 @media(max-width:620px){.cookie-banner{left:10px;bottom:10px;width:calc(100% - 20px);display:none;flex-direction:column;align-items:stretch}.cookie-banner.show{display:flex}.cookie-actions{justify-content:flex-end}.ux-fab-stack{right:10px;bottom:10px}.ux-fab{width:42px;height:42px}.crumbs{font-size:9px}.navright{gap:6px}.navright .live{display:none}.navright #themeQuick{padding:9px}.navright #accountOpen{padding:9px 10px;font-size:10px}.navright #navSignout{padding:9px 10px;font-size:10px}}
 @media(prefers-reduced-motion:reduce){.ux-fab,.ux-toast{transition:none}}
 @media print{header,.ux-fab-stack,.cookie-banner,.ux-overlay,.ux-toast,.topline{display:none!important}body{background:white!important;color:black!important}.wrap{width:100%}a{text-decoration:underline}}
-/* universal-suite-polish */ #universalGamingSuite label{display:block;font-size:.9rem;color:var(--text)} #universalGamingSuite input,#universalGamingSuite textarea,#universalGamingSuite select{box-sizing:border-box;max-width:100%;color:var(--text);background:var(--bg,#080a10);border:1px solid var(--line);border-radius:10px;padding:10px} #universalGamingSuite button{cursor:pointer} #universalGamingSuite .feature-card h3{margin:12px 0;font-size:1.35rem} #universalGamingSuite .feature-card p{line-height:1.55}</style>
+/* universal-suite-polish */ #universalGamingSuite label{display:block;font-size:.9rem;color:var(--text)} #universalGamingSuite input,#universalGamingSuite textarea,#universalGamingSuite select{box-sizing:border-box;max-width:100%;color:var(--text);background:var(--bg,#080a10);border:1px solid var(--line);border-radius:10px;padding:10px} #universalGamingSuite button{cursor:pointer} #universalGamingSuite .feature-card h3{margin:12px 0;font-size:1.35rem} #universalGamingSuite .feature-card p{line-height:1.55}
+/* PLAYER PRO PATCH: touch, neon theme, achievements, responsive canvas */
+html[data-theme="arcade"]{color-scheme:dark;--bg:#09051a;--panel:#130d2b;--panel2:#1d1240;--ink:#f8f4ff;--muted:#b7a7d8;--line:#49316c;--lime:#ff4de1;--cyan:#4dfcff;--purple:#a991ff;--orange:#ff9e66}
+html[data-theme="arcade"] body{background:var(--bg);color:var(--ink)}
+html[data-theme="arcade"] header{background:#09051aee;border-bottom-color:#49316c}
+html[data-theme="arcade"] .navlinks{color:#d6c7f3}
+html[data-theme="arcade"] .btn.primary{background:linear-gradient(120deg,#ff4de1,#8a5bff);color:#fff}
+html[data-theme="arcade"] .toolkit{background:linear-gradient(180deg,#100a24,#09051a)}
+#vgUniverseParticles{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.55}
+#universe{position:relative;isolation:isolate;overflow:hidden}
+#universe>*:not(#vgUniverseParticles){position:relative;z-index:1}
+.vg-pro-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;margin-top:18px}
+.vg-pro-card{min-width:0;padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow-wrap:anywhere}
+.vg-pro-card h3{margin:8px 0 14px;font-size:1.25rem}
+.vg-pro-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.vg-pro-input{box-sizing:border-box;width:100%;min-width:0;margin:6px 0 10px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+.vg-badge-list{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}
+.vg-badge{border:1px solid var(--line);border-radius:999px;padding:8px 11px;font-size:12px;color:var(--muted)}
+.vg-badge.unlocked{border-color:var(--lime);color:var(--lime);background:color-mix(in srgb,var(--lime) 9%,transparent)}
+.vg-score-table{width:100%;border-collapse:collapse;font-size:13px}
+.vg-score-table th,.vg-score-table td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.vg-pro-note{font-size:12px;line-height:1.6;color:var(--muted)}
+#universalGamingSuite, .tool-grid, .feature-grid, .grid-cards{min-width:0}
+button,a,input,select,textarea,[role="button"]{touch-action:manipulation}
+canvas{max-width:100%}
+@media(max-width:600px){.vg-pro-card{padding:16px}.vg-pro-actions>*{flex:1 1 auto}.vg-score-table{font-size:12px}}
+@media(prefers-reduced-motion:reduce){#vgUniverseParticles{display:none}}
+</style>
 <style>
 /* PLAYER SUPPORT, POLLS AND TOUR */
 .support-section{padding:76px 0;border-top:1px solid #ffffff12;background:radial-gradient(ellipse at 80% 20%,#66f5ed08,transparent 40%)}.support-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin-top:26px}.support-card{border:1px solid var(--line);border-radius:20px;padding:clamp(20px,3vw,30px);background:var(--panel)}.support-card h3{font-size:23px;letter-spacing:-.05em;margin:0 0 16px}.faq-list details{border-bottom:1px solid var(--line);padding:13px 0}.faq-list summary{cursor:pointer;font-size:13px;font-weight:700;line-height:1.6}.faq-list details p{font-size:12px;line-height:1.8;color:var(--muted);margin:10px 0 0}.poll-options{display:grid;gap:9px;margin:18px 0}.poll-option{display:flex;gap:10px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:12px;font-size:12px;cursor:pointer}.poll-option:hover{border-color:var(--lime)}.poll-option input{accent-color:var(--lime)}.poll-result{font:10px var(--mono);color:var(--cyan);min-height:18px;margin-top:12px}.support-note{font-size:11px;line-height:1.7;color:var(--muted)}.tour-actions{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.tour-step{font:10px var(--mono);color:var(--lime);letter-spacing:.13em;margin-bottom:12px}
@@ -168,6 +195,23 @@ document.querySelectorAll('#toolkit .reveal').forEach(el=>el.classList.add('visi
 <article class="feature-card" style="padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--panel)"><div class="eyebrow mono">PLAYER CARD</div><h3 id="xpLevel" style="font-size:2rem;margin:12px 0">LEVEL 1</h3><p id="xpText">0 / 100 Arena XP</p><div style="height:9px;background:var(--line);border-radius:9px;overflow:hidden"><div id="xpBar" style="height:100%;width:0;background:var(--accent);transition:width .3s"></div></div><button class="btn primary" id="claimXp" style="margin-top:18px">CLAIM DAILY XP +25</button><p class="support-note" id="xpStatus" aria-live="polite">XP is saved locally on this device.</p></article>
 <article class="feature-card" style="padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--panel)"><div class="eyebrow mono">INSTALLABLE TOOLKIT</div><h3 style="font-size:1.5rem;margin:12px 0">TAKE IT OFFLINE.</h3><p>Install VGAMEING as an app when your browser supports it. Previously cached pages can work offline.</p><button class="btn primary" id="installPwa">INSTALL APP ↗</button><p class="support-note" id="pwaStatus" aria-live="polite">Install option appears when available.</p></article>
 <article class="feature-card" style="padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--panel)"><div class="eyebrow mono">SHARE CARD</div><h3 style="font-size:1.5rem;margin:12px 0">SHARE THE QUEST.</h3><p>Create a downloadable social card from your current daily challenge or a custom message.</p><input id="shareCardText" class="search-input" maxlength="90" value="My next gaming challenge starts now!" aria-label="Share card text" style="width:100%;margin:10px 0;padding:12px"><button class="btn primary" id="makeShareCard">DOWNLOAD PNG ↗</button><p class="support-note" id="shareStatus" aria-live="polite">PNG is generated in your browser.</p></article>
+</div>
+<div class="vg-pro-grid" id="vgPlayerProgressExtras">
+<article class="vg-pro-card" aria-labelledby="vgAchievementsTitle">
+<div class="eyebrow mono">PLAYER MILESTONES</div><h3 id="vgAchievementsTitle">Achievement Badges</h3>
+<p class="vg-pro-note">Unlock milestones as you explore. Badges save on this browser only.</p>
+<ul class="vg-badge-list" id="vgAchievementList" aria-live="polite">
+<li class="vg-badge unlocked">◈ First Visit</li><li class="vg-badge">✦ Universe Explorer</li><li class="vg-badge">⚡ Tool Tester</li><li class="vg-badge">🏆 Score Hunter</li><li class="vg-badge">🎮 Game Hopper</li>
+</ul>
+<div class="vg-pro-actions"><button type="button" class="btn ghost" id="vgThemeCycle">THEME: DEEP SPACE ◐</button><button type="button" class="btn ghost" id="vgResetAchievements">RESET LOCAL BADGES</button></div>
+<p class="vg-pro-note" id="vgAchievementStatus" aria-live="polite">First Visit unlocked.</p>
+</article>
+<article class="vg-pro-card" aria-labelledby="vgLeaderboardTitle">
+<div class="eyebrow mono">ON THIS DEVICE · TOP 5</div><h3 id="vgLeaderboardTitle">Local Scoreboard</h3>
+<form id="vgScoreForm"><label for="vgScoreGame">Game / challenge</label><input class="vg-pro-input" id="vgScoreGame" maxlength="40" required placeholder="e.g. Reaction Rush"><label for="vgScoreName">Player name</label><input class="vg-pro-input" id="vgScoreName" maxlength="24" placeholder="Player"><label for="vgScoreValue">Score</label><input class="vg-pro-input" id="vgScoreValue" type="number" min="0" max="1000000000" step="1" required placeholder="Enter score"><button class="btn primary" type="submit">SAVE SCORE ↗</button></form>
+<div id="vgLeaderboard" style="margin-top:16px" aria-live="polite"><p class="vg-pro-note">Submit a score to start your local leaderboard.</p></div>
+<p class="vg-pro-note">Scores are local, not a global leaderboard. Clearing browser data may erase them.</p>
+</article>
 </div>
 </section>
 <section class="wrap" id="communityPolls" style="padding:20px 0 70px">
@@ -328,5 +372,49 @@ const eq={fps:['+2 dB','+1 dB','0 dB','-2 dB','-1 dB','Reduce excessive bass; av
 const recs={'Relaxed':['Stardew Valley','A Short Hike','PowerWash Simulator'],'Competitive':['Rocket League','Valorant','Apex Legends'],'Story-rich':['Portal 2','The Witcher 3','Life is Strange'],'Spooky':['Phasmophobia','Little Nightmares','SOMA'],'Creative':['Minecraft','Terraria','Dreams'],'Co-op':['It Takes Two','Overcooked! 2','Deep Rock Galactic']};$('findGame').onclick=()=>{let mood=$('findMood').value,platform=$('findPlatform').value,time=$('findTime').value;let list=recs[mood].slice();if(time==='15 minutes')list=list.slice(0,2);$('findResult').innerHTML='<strong>Try these ('+esc(mood)+' · '+esc(time)+' · '+esc(platform)+'):</strong><ul>'+list.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul><small>Check platform availability, price and age rating before playing.</small>'};
 $('makeBracket').onclick=()=>{let names=$('bracketNames').value.split('\n').map(x=>x.trim()).filter(Boolean).slice(0,64);if(names.length<2){$('bracketResult').textContent='Enter at least two players or teams.';return}let html='';if($('bracketFormat').value==='round'){let matches=[];for(let i=0;i<names.length;i++)for(let j=i+1;j<names.length;j++)matches.push(names[i]+' vs '+names[j]);html='<strong>Round robin fixtures ('+matches.length+')</strong><ol>'+matches.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol>'}else{let list=names.slice();if(list.length%2)list.push('BYE');html='<strong>Round 1</strong><ol>';for(let i=0;i<list.length;i+=2)html+='<li>'+esc(list[i])+' vs '+esc(list[i+1])+'</li>';html+='</ol><p class="support-note">Single-elimination first round generated. Advance winners manually to create later rounds.</p>'}$('bracketResult').innerHTML=html};
 let logs=get('logs',[]);function renderLogs(){$('logList').innerHTML=logs.length?logs.map((x,i)=>'<div style="padding:10px 0;border-bottom:1px solid var(--line)"><strong>'+esc(x.game)+'</strong><p>'+esc(x.notes)+'</p><small>'+esc(x.date)+'</small> <button class="btn ghost" data-log-remove="'+i+'">DELETE</button></div>').join(''):'<p class="support-note">No notes saved yet.</p>'}renderLogs();$('saveLog').onclick=()=>{let game=$('logGame').value.trim(),notes=$('logNotes').value.trim();if(!game||!notes){$('logList').textContent='Add a game and notes first.';return}logs.unshift({game,notes,date:new Date().toLocaleString()});set('logs',logs);$('logNotes').value='';renderLogs()};$('logList').onclick=e=>{let b=e.target.closest('[data-log-remove]');if(b){logs.splice(Number(b.dataset.logRemove),1);set('logs',logs);renderLogs()}};
+})();
+</script>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const read=(key,fallback)=>{try{const raw=localStorage.getItem('vg-pro-'+key);return raw===null?fallback:JSON.parse(raw)}catch(_){return fallback}};
+const write=(key,value)=>{try{localStorage.setItem('vg-pro-'+key,JSON.stringify(value));return true}catch(_){return false}};
+const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// Hash navigation: support direct links, refresh, and browser back/forward.
+let hashScrollTimer=0;
+function syncHash(){const id=decodeURIComponent((location.hash||'#home').slice(1));const target=$(id);if(!target)return;clearTimeout(hashScrollTimer);hashScrollTimer=setTimeout(()=>target.scrollIntoView({behavior:document.body.classList.contains('reduce-motion')?'auto':'smooth',block:'start'}),40)}
+window.addEventListener('hashchange',syncHash);
+window.addEventListener('pageshow',()=>{if(location.hash)syncHash()});
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{const id=decodeURIComponent(a.getAttribute('href').slice(1));const target=$(id);if(target)requestAnimationFrame(()=>target.scrollIntoView({behavior:document.body.classList.contains('reduce-motion')?'auto':'smooth',block:'start'}))}));
+// Central audio stop: pause any current/future media when changing sections or leaving.
+window.VGameAudio={stopAll(){document.querySelectorAll('audio,video').forEach(media=>{try{media.pause();if(media.tagName==='AUDIO')media.currentTime=0}catch(_){}})}};
+window.addEventListener('hashchange',()=>window.VGameAudio.stopAll());
+window.addEventListener('pagehide',()=>window.VGameAudio.stopAll());
+document.addEventListener('visibilitychange',()=>{if(document.hidden)window.VGameAudio.stopAll()});
+// Theme cycle: Deep Space -> Arcade Neon -> Light -> Deep Space.
+const themeBtn=$('vgThemeCycle');
+function setTheme(theme){document.documentElement.dataset.theme=theme;write('theme',theme);if(themeBtn)themeBtn.textContent='THEME: '+({'dark':'DEEP SPACE ◐','arcade':'ARCADE NEON ✦','light':'LIGHT MODE ☼'}[theme]||'DEEP SPACE ◐');const old=$('themeQuick');if(old)old.title='Current theme: '+theme+' · use theme button in Player Progress to cycle'}
+let theme=read('theme','dark');if(!['dark','arcade','light'].includes(theme))theme='dark';setTheme(theme);
+themeBtn?.addEventListener('click',()=>setTheme(theme=theme==='dark'?'arcade':theme==='arcade'?'light':'dark'));
+// Achievement progress.
+const defs=[['first','◈ First Visit','Open the site'],['universe','✦ Universe Explorer','Visit The Universe'],['tool','⚡ Tool Tester','Use a player tool'],['score','🏆 Score Hunter','Save a score of 1,000+'],['games','🎮 Game Hopper','Try five different game/tool actions']];
+let badges=read('badges',['first']);if(!Array.isArray(badges))badges=['first'];
+function unlock(id){if(!badges.includes(id)){badges.push(id);write('badges',badges);paintBadges();const status=$('vgAchievementStatus');if(status)status.textContent='Badge unlocked: '+(defs.find(d=>d[0]===id)?.[1]||id)}}
+function paintBadges(){const list=$('vgAchievementList');if(!list)return;list.replaceChildren();defs.forEach(d=>{const li=document.createElement('li');li.className='vg-badge'+(badges.includes(d[0])?' unlocked':'');li.textContent=d[1]+(badges.includes(d[0])?' ✓':' 🔒');li.title=d[2];list.appendChild(li)});const status=$('vgAchievementStatus');if(status)status.textContent=badges.length+' / '+defs.length+' badges unlocked on this browser.'}
+unlock('first');paintBadges();
+if(location.hash==='#universe')unlock('universe');
+window.addEventListener('hashchange',()=>{if(location.hash==='#universe')unlock('universe')});
+let actions=read('actions',[]);if(!Array.isArray(actions))actions=[];
+const actionSelectors=['#newMission','#rollIdea','#makeBracket','#estimateFps','#findGame','#showEq','#startTimer','#timerStart','#makeShareCard','#newPalette'];
+document.addEventListener('click',e=>{if(e.target.closest('#universalGamingSuite button, #toolkit .tool-action, '+actionSelectors.join(','))){const id=e.target.closest('button')?.id||e.target.closest('button')?.textContent||'tool';if(!actions.includes(id))actions.push(id);actions=actions.slice(-20);write('actions',actions);if(actions.length>=5)unlock('games');unlock('tool')}});
+$('vgResetAchievements')?.addEventListener('click',()=>{badges=[];actions=[];write('badges',badges);write('actions',actions);paintBadges();if($('vgAchievementStatus'))$('vgAchievementStatus').textContent='Local badges reset. Explore the site to unlock them again.'});
+// Local top-five leaderboard by game.
+let scores=read('scores',[]);if(!Array.isArray(scores))scores=[];
+function paintScores(){const out=$('vgLeaderboard');if(!out)return;const game=$('vgScoreGame').value.trim().toLowerCase();const rows=scores.filter(x=>!game||x.game.toLowerCase()===game).sort((a,b)=>b.score-a.score||a.time-b.time).slice(0,5);if(!rows.length){out.innerHTML='<p class="vg-pro-note">No scores for this game yet. Add the first one above.</p>';return}const table=document.createElement('table');table.className='vg-score-table';table.innerHTML='<thead><tr><th>#</th><th>Player</th><th>Score</th></tr></thead>';const body=document.createElement('tbody');rows.forEach((r,i)=>{const tr=document.createElement('tr');[String(i+1),r.name,String(r.score)].forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.appendChild(td)});body.appendChild(tr)});table.appendChild(body);out.replaceChildren(table)}
+$('vgScoreForm')?.addEventListener('submit',e=>{e.preventDefault();const game=$('vgScoreGame').value.trim(),name=$('vgScoreName').value.trim()||'Player',score=Number($('vgScoreValue').value);if(!game||!Number.isFinite(score)||score<0)return;scores.push({game,name,score:Math.floor(score),time:Date.now()});scores=scores.slice(-300);write('scores',scores);if(score>=1000)unlock('score');paintScores();$('vgScoreValue').value='';if($('vgAchievementStatus'))$('vgAchievementStatus').textContent='Score saved locally for '+game+'.';});
+$('vgScoreGame')?.addEventListener('input',paintScores);paintScores();
+// Subtle, responsive universe particles. Disabled for reduced motion or narrow data mode.
+const host=$('universe');
+if(host&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const canvas=document.createElement('canvas');canvas.id='vgUniverseParticles';canvas.setAttribute('aria-hidden','true');host.prepend(canvas);const ctx=canvas.getContext('2d');if(ctx){let w=0,h=0,stars=[];function resize(){const r=host.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,1.5);w=Math.max(1,r.width);h=Math.max(1,r.height);canvas.width=Math.floor(w*dpr);canvas.height=Math.floor(h*dpr);canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);stars=Array.from({length:Math.min(65,Math.max(22,Math.floor(w/16)))},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+.3,v:Math.random()*.22+.04,a:Math.random()*.45+.15}))}function draw(){if(document.hidden)return;ctx.clearRect(0,0,w,h);for(const p of stars){p.y-=p.v;if(p.y<0){p.y=h;p.x=Math.random()*w}ctx.globalAlpha=p.a;ctx.fillStyle=document.documentElement.dataset.theme==='arcade'?'#ff4de1':'#66f5ed';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}ctx.globalAlpha=1;requestAnimationFrame(draw)}resize();window.addEventListener('resize',resize,{passive:true});draw()}}
 })();
 </script></body></html>
