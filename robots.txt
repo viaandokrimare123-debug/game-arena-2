@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://viaandokrimare123-debug.github.io/game-arena-2/sitemap.xml
