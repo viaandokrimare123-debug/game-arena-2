@@ -11,5 +11,13 @@
     "games",
     "entertainment"
   ],
-  "orientation": "any"
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/game-arena-2/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
