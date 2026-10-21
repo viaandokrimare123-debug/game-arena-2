@@ -1,0 +1,24 @@
+{
+  "name": "VGAMEING — Enter the Overworld",
+  "short_name": "VGAMEING",
+  "description": "Minecraft challenges, build ideas and free player tools.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080a10",
+  "theme_color": "#080a10",
+  "orientation": "any",
+  "categories": [
+    "games",
+    "entertainment",
+    "utilities"
+  ],
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
