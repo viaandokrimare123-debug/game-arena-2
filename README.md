@@ -1,23 +1,24 @@
-# VGAMEING — Play Beyond Ordinary
+# OBBYVERSE — Enter Your Next World
 
-A polished, responsive, single-file landing page promoting the Vgameing Minecraft creator channel.
+An animated, responsive, Roblox-inspired fan gaming landing page with an original blocky avatar, neon motion effects, game-mode cards, and a working random challenge generator.
 
-## Features
-- Responsive dark-neon visual design with custom animated pixel cube artwork
-- Sections for Minecraft builds, myth-busting experiments, and seed exploration
-- Direct YouTube channel and Shorts links
-- Accessible semantic HTML, reduced dependency footprint, and mobile layout
+## Included
+- Animated CSS avatar, rotating orbit, floating tags, and glowing block art
+- Mobile-friendly navigation and responsive layouts
+- Obby Rush, Night Shift, and Build Lab discovery cards
+- Random gaming quest generator with live quest counter
+- Vgameing creator spotlight linking to the YouTube channel
+- Reduced-motion support and accessible labels
+- Single-file static site; no framework, build step, API key, or paid service required
 
-## Run locally
+## Run
 Open `index.html` in a browser.
 
-## Publish with GitHub Pages
-1. Open **Settings → Pages** in this repository.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select **main** and **/(root)**, then Save.
-4. After GitHub finishes deployment, the Pages URL will appear on that settings page.
+## Publish
+This repository can be published with GitHub Pages from **Settings → Pages → Deploy from a branch → main → /(root)**. GitHub may take a few minutes to publish.
 
-## Channel
+## Creator spotlight
 https://www.youtube.com/@travelwithme123m
 
-Built as a static site; no build step or API keys are required.
+## Disclaimer
+OBBYVERSE is an independent fan-made concept and is not affiliated with or endorsed by Roblox Corporation. Roblox is a trademark of its respective owner. The creator link is a spotlight, not a claim of paid sponsorship.
